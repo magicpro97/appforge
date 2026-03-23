@@ -1,0 +1,15 @@
+{
+  "name": "nextjs-supabase",
+  "description": "Next.js app with Supabase backend, email + social auth, Tailwind CSS, and Zustand",
+  "config": {
+    "framework": "nextjs",
+    "backend": "supabase",
+    "auth": ["email", "social", "magic-link"],
+    "styling": "tailwind",
+    "stateManagement": "zustand",
+    "cicd": "github-actions",
+    "copilotAgents": true,
+    "generateReadme": true,
+    "generateLandingPage": true
+  }
+}

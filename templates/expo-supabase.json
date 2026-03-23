@@ -1,0 +1,15 @@
+{
+  "name": "expo-supabase",
+  "description": "Expo (React Native) app with Supabase backend, email auth, and NativeWind styling",
+  "config": {
+    "framework": "expo",
+    "backend": "supabase",
+    "auth": ["email", "social"],
+    "styling": "nativewind",
+    "stateManagement": "zustand",
+    "cicd": "github-actions",
+    "copilotAgents": true,
+    "generateReadme": true,
+    "generateLandingPage": false
+  }
+}

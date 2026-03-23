@@ -1,0 +1,15 @@
+{
+  "name": "flutter-firebase",
+  "description": "Flutter app with Firebase backend, social auth, and Riverpod state management",
+  "config": {
+    "framework": "flutter",
+    "backend": "firebase",
+    "auth": ["email", "social"],
+    "styling": "none",
+    "stateManagement": "riverpod",
+    "cicd": "github-actions",
+    "copilotAgents": true,
+    "generateReadme": true,
+    "generateLandingPage": false
+  }
+}
