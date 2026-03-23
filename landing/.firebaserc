@@ -5,10 +5,11 @@
   "targets": {
     "linh-s-blog": {
       "hosting": {
-        "appforge": [
-          "appforge"
+        "appforge-tool": [
+          "appforge-tool"
         ]
       }
     }
-  }
+  },
+  "etags": {}
 }
