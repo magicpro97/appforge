@@ -7,12 +7,17 @@ export async function configCommand(action: string, key?: string, value?: string
       if (!key || !value) {
         console.log(chalk.red('\n❌ Both key and value are required'));
         console.log(chalk.gray('  Usage: appforge config set <key> <value>'));
-        console.log(chalk.gray('  Keys: framework, backend, styling, stateManagement, cicd, copilotAgents'));
+        console.log(chalk.gray('  Keys: framework, backend, styling, stateManagement, cicd, copilotAgents, auth'));
         return;
       }
 
-      setConfigValue(key, value);
-      console.log(chalk.green(`\n✅ Config updated: ${key} = ${value}`));
+      try {
+        setConfigValue(key, value);
+        console.log(chalk.green(`\n✅ Config updated: ${key} = ${value}`));
+      } catch (err) {
+        console.log(chalk.red(`\n❌ ${(err as Error).message}`));
+        return;
+      }
       break;
     }
 

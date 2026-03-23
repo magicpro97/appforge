@@ -54,6 +54,7 @@ export function setConfigValue(key: string, value: string): void {
     stateManagement: 'defaultStateManagement',
     cicd: 'defaultCicd',
     copilotAgents: 'defaultCopilotAgents',
+    auth: 'defaultAuth',
   };
 
   const configKey = keyMap[key];
@@ -64,5 +65,8 @@ export function setConfigValue(key: string, value: string): void {
       (config as Record<string, unknown>)[configKey] = value;
     }
     saveConfig(config);
+  } else {
+    const validKeys = Object.keys(keyMap).join(', ');
+    throw new Error(`Invalid config key: "${key}". Valid keys: ${validKeys}`);
   }
 }
