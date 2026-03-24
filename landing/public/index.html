@@ -373,7 +373,7 @@
 
       <div class="install-box" onclick="copyInstall(this)" title="Click to copy">
         <span class="dollar">$</span>
-        <code>npm install -g appforge</code>
+        <code>npm install -g @magicpro97/appforge</code>
         <span class="copy-hint">click to copy</span>
       </div>
 
@@ -484,7 +484,7 @@
 
       <div class="commands-list">
         <div class="command-item">
-          <code>npm install -g appforge</code>
+          <code>npm install -g @magicpro97/appforge</code>
           <span>Install globally</span>
         </div>
         <div class="command-item">
@@ -536,7 +536,7 @@
 
   <script>
     function copyInstall(el) {
-      navigator.clipboard.writeText('npm install -g appforge');
+      navigator.clipboard.writeText('npm install -g @magicpro97/appforge');
       el.classList.add('copied');
       el.querySelector('.copy-hint').textContent = 'copied!';
       setTimeout(() => {

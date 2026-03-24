@@ -10,7 +10,7 @@
 ## Install
 
 ```bash
-npm install -g appforge
+npm install -g @magicpro97/appforge
 ```
 
 ## Quick Start

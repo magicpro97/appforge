@@ -1,5 +1,5 @@
 {
-  "name": "appforge",
+  "name": "@magicpro97/appforge",
   "version": "1.0.0",
   "description": "🏗️ Universal App Scaffolding CLI — create complete projects with framework, backend, auth, CI/CD in one command",
   "main": "dist/index.js",
@@ -36,6 +36,9 @@
   "repository": {
     "type": "git",
     "url": "git+https://github.com/magicpro97/appforge.git"
+  },
+  "publishConfig": {
+    "access": "public"
   },
   "homepage": "https://github.com/magicpro97/appforge#readme",
   "engines": {
