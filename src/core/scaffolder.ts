@@ -1,4 +1,5 @@
 import { join } from 'path';
+import { existsSync } from 'fs';
 import chalk from 'chalk';
 import ora from 'ora';
 import type { ProjectConfig, GeneratorResult } from '../types/index.js';
@@ -17,6 +18,10 @@ import { generateLandingPage } from './landing.js';
 
 export async function scaffold(config: ProjectConfig): Promise<void> {
   const projectPath = join(process.cwd(), config.name);
+
+  if (existsSync(projectPath)) {
+    throw new Error(`Directory "${config.name}" already exists. Please choose a different project name or remove the existing directory.`);
+  }
 
   console.log(chalk.bold.cyan('\n🏗️  Scaffolding project: ') + chalk.white(config.name));
   console.log(chalk.gray('─'.repeat(50)));

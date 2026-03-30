@@ -1,10 +1,12 @@
 import { exec } from 'child_process';
 import { promisify } from 'util';
 import type { GeneratorResult } from '../types/index.js';
+import { validateProjectName } from '../core/validate.js';
 
 const execAsync = promisify(exec);
 
 export async function scaffoldFlutter(name: string, projectPath: string): Promise<GeneratorResult> {
+  validateProjectName(name);
   try {
     await execAsync(`flutter create ${name}`, {
       cwd: process.cwd(),

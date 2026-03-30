@@ -2,8 +2,18 @@ import inquirer from 'inquirer';
 import chalk from 'chalk';
 import type { ProjectConfig, Framework, Backend, AuthMethod, StylingOption, StateManagement, CICDOption } from '../../types/index.js';
 import { scaffold } from '../../core/scaffolder.js';
+import { validateProjectName } from '../../core/validate.js';
 
 export async function initCommand(name?: string): Promise<void> {
+  if (name) {
+    try {
+      validateProjectName(name);
+    } catch (err) {
+      console.error(chalk.red(`\n✖ ${(err as Error).message}`));
+      process.exit(1);
+    }
+  }
+
   console.log(chalk.bold.cyan('\n🏗️  AppForge — Project Scaffolding Wizard\n'));
 
   const answers = await inquirer.prompt([

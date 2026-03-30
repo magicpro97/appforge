@@ -1,6 +1,7 @@
 import { exec } from 'child_process';
 import { promisify } from 'util';
 import type { Framework, GeneratorResult } from '../types/index.js';
+import { validateProjectName } from '../core/validate.js';
 
 const execAsync = promisify(exec);
 
@@ -15,6 +16,7 @@ export async function scaffoldVite(
   projectPath: string,
   framework: Framework
 ): Promise<GeneratorResult> {
+  validateProjectName(name);
   const template = viteTemplateMap[framework];
   if (!template) {
     return {
